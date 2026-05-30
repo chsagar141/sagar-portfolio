@@ -19,4 +19,6 @@ export interface Experience {
   company: string;
   period: string;
   description: string[];
+  logoUrl?: string;
+  icon?: any;
 }

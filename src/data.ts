@@ -1,5 +1,5 @@
 import { Project, Skill, Experience } from './types';
-import { BrainCircuit, Database, Server, Code2, Cpu, Wrench, Layers, Workflow, Terminal } from 'lucide-react';
+import { BrainCircuit, Database, Server, Code2, Cpu, Wrench, Layers, Workflow, Terminal, Briefcase } from 'lucide-react';
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com/chsagar141',
@@ -78,6 +78,16 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE_AI: Experience[] = [
   {
+    role: 'Backend eSupport Officer (F&D)',
+    company: 'IntouchCX',
+    period: 'Current',
+    description: [
+      'Dealing as Fraud and Dispute (F&D) officer.',
+      'Collaborating on backend issue resolution and support.',
+    ],
+    logoUrl: 'https://i.ibb.co/1YdrKL82/Intouch-CX.webp'
+  },
+  {
     role: 'Freelance AI Tools Developer',
     company: 'Self-Employed',
     period: '2024 - Present',
@@ -86,11 +96,22 @@ export const EXPERIENCE_AI: Experience[] = [
       'Managed and refined datasets to improve model performance and output quality.',
       'Delivered 30+ AI-based projects for 12+ clients, ensuring consistent and high-quality results.',
       'Generated $1,500+ in freelance earnings through independent project work.'
-    ]
+    ],
+    logoUrl: 'https://i.ibb.co/93mrPgxN/free-lanc-logo.png'
   }
 ];
 
 export const EXPERIENCE_WEB: Experience[] = [
+  {
+    role: 'Backend eSupport Officer (F&D)',
+    company: 'IntouchCX',
+    period: 'Current',
+    description: [
+      'Dealing as Fraud and Dispute (F&D) officer.',
+      'Providing dedicated backend eSupport and issue resolution.',
+    ],
+    logoUrl: 'https://i.ibb.co/1YdrKL82/Intouch-CX.webp'
+  },
   {
     role: 'Freelance Backend Developer',
     company: 'Self-Employed',
@@ -100,6 +121,7 @@ export const EXPERIENCE_WEB: Experience[] = [
       'Designed well-structured MySQL databases and wrote efficient queries for Backend systems.',
       'Developed robust REST APIs using FastAPI for various independent projects.',
       'Passionate about clean architecture and solving real-world problems through reliable server-side solutions.'
-    ]
+    ],
+    logoUrl: 'https://i.ibb.co/93mrPgxN/free-lanc-logo.png'
   }
 ];

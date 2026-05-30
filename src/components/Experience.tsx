@@ -8,7 +8,7 @@ export function Experience({ mode }: { mode: Mode }) {
   const accentColor = isAi ? 'text-indigo-400' : 'text-emerald-400';
 
   return (
-    <section className="py-24 px-8 border-t border-white/5 relative z-10">
+    <section id="experience-section" className="py-24 px-8 border-t border-white/5 relative z-10">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center space-x-4 mb-16">
           <div className="flex-1 h-[1px] bg-white/5"></div>
@@ -30,7 +30,18 @@ export function Experience({ mode }: { mode: Mode }) {
                   <div className={`text-[10px] uppercase font-mono tracking-widest mb-3 ${accentColor}`}>
                     {exp.period}
                   </div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] font-bold opacity-50">{exp.company}</div>
+                  <div className="flex items-center space-x-3">
+                    {exp.logoUrl ? (
+                      <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center p-1 overflow-hidden shrink-0">
+                        <img src={exp.logoUrl} alt={exp.company} className="w-full h-full object-contain" />
+                      </div>
+                    ) : exp.icon ? (
+                      <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                        <exp.icon className="w-4 h-4 opacity-50" />
+                      </div>
+                    ) : null}
+                    <div className="text-[11px] uppercase tracking-[0.2em] font-bold opacity-50">{exp.company}</div>
+                  </div>
                 </div>
                 
                 <div>

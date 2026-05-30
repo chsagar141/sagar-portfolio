@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { BrainCircuit, Server, ChevronRight } from 'lucide-react';
 import { Mode } from '../types';
+import { ProfileMenu } from './ProfileMenu';
 
 interface GatewayProps {
   onSelect: (mode: Mode) => void;
@@ -87,15 +88,15 @@ export function Gateway({ onSelect }: GatewayProps) {
         </div>
       </motion.div>
       
-      {/* Center divider brand */}
-      <motion.div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-[#050505] border border-white/10 z-20 pointer-events-none"
-        initial={{ scale: 0, opacity: 0, rotate: 45 }}
-        animate={{ scale: 1, opacity: 1, rotate: 45 }}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-      >
-        <span className="text-[8px] md:text-[10px] font-bold tracking-widest text-[#e5e5e5] -rotate-45">CH</span>
-      </motion.div>
+      <div className="absolute top-6 right-8 z-50">
+        <ProfileMenu onNavigate={(id) => {
+          // Default route to web if navigating from Gateway, then scroll
+          onSelect('web');
+          setTimeout(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }} />
+      </div>
     </div>
   );
 }
