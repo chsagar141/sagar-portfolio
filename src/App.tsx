@@ -13,6 +13,7 @@ import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
+import { CivitaiShowcase } from './components/CivitaiShowcase';
 import { Contact } from './components/Contact';
 import { Mode } from './types';
 
@@ -40,6 +41,7 @@ export default function App() {
               <Skills mode={mode} />
               <Experience mode={mode} />
               <Projects mode={mode} />
+              {mode === 'ai' && <CivitaiShowcase />}
               <Contact />
             </main>
             
