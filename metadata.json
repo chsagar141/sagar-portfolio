@@ -1,0 +1,6 @@
+{
+  "name": "CH Sagar Portfolio",
+  "description": "Professional developer portfolio for CH Sagar, featuring Web Development and Generative AI projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
