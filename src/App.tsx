@@ -21,8 +21,8 @@ export default function App() {
   const [mode, setMode] = useState<Mode>(null);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e5e5e5] selection:bg-white/10 selection:text-white font-sans antialiased overflow-x-hidden relative flex flex-col">
-      <div className="fixed inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050505] text-slate-900 dark:text-[#e5e5e5] selection:bg-black/10 dark:selection:bg-white/10 selection:text-black dark:selection:text-white font-sans antialiased overflow-x-hidden relative flex flex-col transition-colors duration-300">
+      <div className="fixed inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(var(--grid-color) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       <AnimatePresence mode="wait">
         {!mode ? (
           <Gateway key="gateway" onSelect={(m) => setMode(m)} />
@@ -45,7 +45,7 @@ export default function App() {
               <Contact />
             </main>
             
-            <footer className="py-8 px-8 border-t border-white/5 bg-[#050505] relative z-20 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.3em] opacity-40">
+            <footer className="py-8 px-8 border-t border-black/5 dark:border-white/5 bg-slate-50 dark:bg-[#050505] relative z-20 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.3em] opacity-40 transition-colors duration-300">
               <div className="mb-4 md:mb-0">
                 © {new Date().getFullYear()} CH Sagar.
               </div>

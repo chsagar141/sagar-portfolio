@@ -9,10 +9,10 @@ interface GatewayProps {
 
 export function Gateway({ onSelect }: GatewayProps) {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col md:flex-row bg-[#050505] text-[#e5e5e5] font-sans overflow-hidden">
+    <div className="fixed inset-0 z-50 flex flex-col md:flex-row bg-slate-50 dark:bg-[#050505] text-slate-900 dark:text-[#e5e5e5] font-sans overflow-hidden transition-colors duration-300">
       {/* Left side: AI */}
       <motion.div 
-        className="flex-1 relative group cursor-pointer border-b md:border-b-0 md:border-r border-white/5 transition-all duration-700 flex flex-col items-center justify-center"
+        className="flex-1 relative group cursor-pointer border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 transition-all duration-700 flex flex-col items-center justify-center"
         initial={{ y: '-100%' }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -41,7 +41,7 @@ export function Gateway({ onSelect }: GatewayProps) {
           </div>
 
           <div className="mt-10 opacity-70 group-hover:opacity-100 transition-opacity">
-            <div className="px-8 py-3 border border-white/10 group-hover:border-indigo-500/50 transition-colors text-[10px] tracking-widest uppercase flex items-center space-x-2">
+            <div className="px-8 py-3 border border-black/10 dark:border-white/10 group-hover:border-indigo-500/50 transition-colors text-[10px] tracking-widest uppercase flex items-center space-x-2">
               <span>Explore AI Projects</span>
               <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </div>
@@ -80,7 +80,7 @@ export function Gateway({ onSelect }: GatewayProps) {
           </div>
 
           <div className="mt-10 opacity-70 group-hover:opacity-100 transition-opacity">
-            <div className="px-8 py-3 border border-white/10 group-hover:border-emerald-500/50 transition-colors text-[10px] tracking-widest uppercase flex items-center space-x-2">
+            <div className="px-8 py-3 border border-black/10 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors text-[10px] tracking-widest uppercase flex items-center space-x-2">
               <span>View Technical Stack</span>
               <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </div>

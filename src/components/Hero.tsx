@@ -47,7 +47,7 @@ export function Hero({ mode }: { mode: Mode }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm md:text-base font-mono tracking-wide text-white/50 max-w-2xl leading-loose mb-12 uppercase"
+          className="text-sm md:text-base font-mono tracking-wide text-black/50 dark:text-white/50 max-w-2xl leading-loose mb-12 uppercase"
         >
           {description}
         </motion.p>
@@ -59,21 +59,21 @@ export function Hero({ mode }: { mode: Mode }) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex items-center space-x-6"
         >
-          <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href={SOCIAL_LINKS.email} className="text-white/40 hover:text-white transition-colors">
+          <a href={SOCIAL_LINKS.email} className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
             <Mail className="w-5 h-5" />
           </a>
           {isAi && (
             <>
-              <a href={SOCIAL_LINKS.civitai} target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-indigo-400 font-bold transition-colors">
+              <a href={SOCIAL_LINKS.civitai} target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 dark:text-white/40 hover:text-indigo-500 dark:hover:text-indigo-400 font-bold transition-colors">
                 CivitAI
               </a>
-              <a href={SOCIAL_LINKS.huggingface} target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-widest text-white/40 hover:text-indigo-400 font-bold transition-colors">
+              <a href={SOCIAL_LINKS.huggingface} target="_blank" rel="noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 dark:text-white/40 hover:text-indigo-500 dark:hover:text-indigo-400 font-bold transition-colors">
                 HuggingFace
               </a>
             </>
