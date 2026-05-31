@@ -1,3 +1,16 @@
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export async function onRequestOptions() {
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders,
+  });
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     const { messages } = await request.json();
@@ -5,7 +18,7 @@ export async function onRequestPost({ request, env }) {
     if (!messages || !Array.isArray(messages)) {
       return new Response(JSON.stringify({ error: "Invalid message format" }), { 
         status: 400, 
-        headers: { "Content-Type": "application/json" } 
+        headers: { ...corsHeaders, "Content-Type": "application/json" } 
       });
     }
 
@@ -22,7 +35,7 @@ export async function onRequestPost({ request, env }) {
     if (!OPENROUTER_API_KEY) {
       return new Response(JSON.stringify({ error: "OpenRouter API Key is not configured." }), { 
         status: 500,
-        headers: { "Content-Type": "application/json" } 
+        headers: { ...corsHeaders, "Content-Type": "application/json" } 
       });
     }
 
@@ -56,7 +69,7 @@ export async function onRequestPost({ request, env }) {
 
       return new Response(JSON.stringify({ error: errorMsg, details: errText }), { 
         status: fetchRes.status,
-        headers: { "Content-Type": "application/json" }
+        headers: { ...corsHeaders, "Content-Type": "application/json" }
       });
     }
 
@@ -64,14 +77,14 @@ export async function onRequestPost({ request, env }) {
     
     return new Response(JSON.stringify(data), { 
       status: 200, 
-      headers: { "Content-Type": "application/json" } 
+      headers: { ...corsHeaders, "Content-Type": "application/json" } 
     });
 
   } catch (error) {
     console.error("Internal Function Error:", error);
     return new Response(JSON.stringify({ error: "Internal server error" }), { 
       status: 500,
-      headers: { "Content-Type": "application/json" }
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
   }
 }

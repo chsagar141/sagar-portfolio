@@ -77,13 +77,29 @@ export function LiveChat() {
         body: JSON.stringify({ messages: apiMessages }),
       });
 
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.error || 'Network response was not ok');
+      let responseData;
+      const contentType = response.headers.get("content-type");
+      
+      try {
+        if (contentType && contentType.includes("application/json")) {
+          responseData = await response.json();
+        } else {
+          const text = await response.text();
+          console.error("Non-JSON response:", text);
+          throw new Error("Server returned an invalid response format.");
+        }
+      } catch (parseError) {
+        if (!response.ok) {
+           throw new Error(`Server error: ${response.status} ${response.statusText}`);
+        }
+        throw new Error("Failed to parse server response.");
       }
 
-      const data = await response.json();
-      const aiReply = data.choices[0]?.message?.content || "I'm sorry, I couldn't process that.";
+      if (!response.ok) {
+        throw new Error(responseData?.error || 'Network response was not ok');
+      }
+
+      const aiReply = responseData?.choices?.[0]?.message?.content || "I'm sorry, I couldn't process that.";
       
       setMessages(prev => [...prev, { role: 'assistant', content: aiReply }]);
     } catch (error: any) {
