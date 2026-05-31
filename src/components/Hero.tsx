@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Mode } from '../types';
 import { SOCIAL_LINKS } from '../data';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Link2 } from 'lucide-react';
 
 export function Hero({ mode }: { mode: Mode }) {
   const isAi = mode === 'ai';
@@ -64,6 +64,9 @@ export function Hero({ mode }: { mode: Mode }) {
           </a>
           <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
             <Linkedin className="w-5 h-5" />
+          </a>
+          <a href={SOCIAL_LINKS.linktree} target="_blank" rel="noreferrer" className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M13.73,12.33h6.39L14.77,5.43h3.58l5.24,6.9H18.7l4.7,5.92H17.43l-2.07-2.61-2.63,3.32v5.6h-2.92v-5.6l-2.63-3.32-2.07,2.61H-.38l4.7-5.92H-1l5.24-6.9h3.58l-5.35,6.9h6.39v.03L12,7.74l3.14,4.59h-1.41Z" /></svg>
           </a>
           <a href={SOCIAL_LINKS.email} className="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
             <Mail className="w-5 h-5" />

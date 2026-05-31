@@ -8,6 +8,7 @@ export const SOCIAL_LINKS = {
   huggingface: 'https://huggingface.co/chsagar141',
   email: 'mailto:Chsagar141@gmail.com',
   phone: 'tel:+918458050298',
+  linktree: 'https://linktr.ee/Xue145',
 };
 
 export const AI_SKILLS: Skill[] = [

@@ -27,7 +27,7 @@ export function Contact() {
             Available for freelance opportunities, backend architecture, and AI integrations.
           </p>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-1 text-[11px] font-mono uppercase tracking-widest text-black dark:text-white">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-1 text-[11px] font-mono uppercase tracking-widest text-black dark:text-white flex-wrap">
             <a href={SOCIAL_LINKS.email} className="px-8 py-4 border border-black/5 dark:border-white/5 bg-white dark:bg-[#080808] hover:bg-slate-50 dark:hover:bg-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all flex items-center justify-center space-x-3 w-full md:w-auto">
               <Mail className="w-4 h-4 opacity-50" />
               <span>chsagar141@gmail.com</span>
@@ -38,7 +38,12 @@ export function Contact() {
               <span>+91 8458050298</span>
             </a>
             
-            <div className="px-8 py-4 border border-black/5 dark:border-white/5 bg-white dark:bg-[#080808] flex items-center justify-center space-x-3 w-full md:w-auto">
+            <a href={SOCIAL_LINKS.linktree} target="_blank" rel="noreferrer" className="px-8 py-4 border border-black/5 dark:border-white/5 bg-white dark:bg-[#080808] hover:bg-slate-50 dark:hover:bg-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all flex items-center justify-center space-x-3 w-full md:w-auto">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 opacity-50"><path d="M13.73,12.33h6.39L14.77,5.43h3.58l5.24,6.9H18.7l4.7,5.92H17.43l-2.07-2.61-2.63,3.32v5.6h-2.92v-5.6l-2.63-3.32-2.07,2.61H-.38l4.7-5.92H-1l5.24-6.9h3.58l-5.35,6.9h6.39v.03L12,7.74l3.14,4.59h-1.41Z" /></svg>
+              <span>linktr.ee/Xue145</span>
+            </a>
+
+            <div className="px-8 py-4 border border-black/5 dark:border-white/5 bg-white dark:bg-[#080808] flex items-center justify-center space-x-3 w-full md:w-auto mt-4 md:mt-0">
               <MapPin className="w-4 h-4 opacity-50" />
               <span className="opacity-70">Odisha, India</span>
             </div>
