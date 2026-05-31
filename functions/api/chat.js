@@ -1,19 +1,20 @@
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-};
+export async function onRequest(context) {
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
 
-export async function onRequestOptions() {
-  return new Response(null, {
-    status: 204,
-    headers: corsHeaders,
-  });
-}
+  if (context.request.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders, status: 204 });
+  }
 
-export async function onRequestPost({ request, env }) {
+  if (context.request.method !== "POST") {
+    return new Response("Method not allowed", { status: 405, headers: corsHeaders });
+  }
+
   try {
-    const { messages } = await request.json();
+    const { messages } = await context.request.json();
 
     if (!messages || !Array.isArray(messages)) {
       return new Response(JSON.stringify({ error: "Invalid message format" }), { 
@@ -29,8 +30,8 @@ export async function onRequestPost({ request, env }) {
 
     const apiMessages = [systemPrompt, ...messages];
     
-    // Cloudflare Pages accesses environment variables via the `env` object
-    const OPENROUTER_API_KEY = env.OPENROUTER_API_KEY;
+    // Cloudflare Pages accesses environment variables via context.env
+    const OPENROUTER_API_KEY = context.env.OPENROUTER_API_KEY;
 
     if (!OPENROUTER_API_KEY) {
       return new Response(JSON.stringify({ error: "OpenRouter API Key is not configured." }), { 
