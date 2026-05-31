@@ -21,7 +21,11 @@ async function startServer() {
 
       const apiMessages = [systemPrompt, ...messages];
 
-      const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
+      const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+
+      if (!OPENROUTER_API_KEY) {
+        return res.status(500).json({ error: "OpenRouter API Key is not configured." });
+      }
 
       const fetchRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
