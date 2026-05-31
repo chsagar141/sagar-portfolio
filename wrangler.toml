@@ -1,6 +1,0 @@
-name = "sagar-portfolio"
-main = "src/worker.js"
-compatibility_date = "2024-05-31"
-
-[assets]
-directory = "dist"

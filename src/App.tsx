@@ -26,7 +26,9 @@ export default function App() {
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(var(--grid-color) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       <AnimatePresence mode="wait">
         {!mode ? (
-          <Gateway key="gateway" onSelect={(m) => setMode(m)} />
+          <motion.div key="gateway" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
+            <Gateway onSelect={(m) => setMode(m)} />
+          </motion.div>
         ) : (
           <motion.div
             key="portfolio"
