@@ -15,6 +15,7 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { CivitaiShowcase } from './components/CivitaiShowcase';
 import { Contact } from './components/Contact';
+import { LiveChat } from './components/LiveChat';
 import { Mode } from './types';
 
 export default function App() {
@@ -44,6 +45,8 @@ export default function App() {
               {mode === 'ai' && <CivitaiShowcase />}
               <Contact />
             </main>
+            
+            <LiveChat />
             
             <footer className="py-8 px-8 border-t border-black/5 dark:border-white/5 bg-slate-50 dark:bg-[#050505] relative z-20 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.3em] opacity-40 transition-colors duration-300">
               <div className="mb-4 md:mb-0">
